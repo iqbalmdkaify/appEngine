@@ -1,14 +1,17 @@
 import './App.css'
-import LoginCard from './components/LoginCard'
+// import AuthCard from './components/LoginCard'
 // import Footer from './components/Footer'
-// import NavBar from './components/NavBar'
+import NavBar from './components/NavBar'
 
 function App() {
 
   return (
-    <div className='flex justify-center items-center w-full h-screen'>
-      <LoginCard />
-    </div>
+    <NavBar />
+
+    // Test login card
+    // <div className='flex justify-center items-center w-full h-screen'>
+    //   <AuthCard />
+    // </div>
   )
 }
 

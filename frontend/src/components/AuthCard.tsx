@@ -5,7 +5,7 @@ import { PiWebhooksLogo } from 'react-icons/pi';
 import RegisterForm from '../atoms/RegisterForm';
 // import LoginForm from '../atoms/LoginForm';
 
-const LoginCard = () => {
+const AuthCard = () => {
     return (
         <div className='flex justify-between items-center gap-[4rem] max-w-6xl'>
             {/* content */}
@@ -40,4 +40,4 @@ const LoginCard = () => {
     )
 }
 
-export default LoginCard
+export default AuthCard
