@@ -2,8 +2,8 @@ import { DiDjango } from 'react-icons/di';
 import { FaReact } from 'react-icons/fa';
 import { SiReactrouter } from 'react-icons/si';
 import { PiWebhooksLogo } from 'react-icons/pi';
-import LoginForm from '../atoms/LoginForm';
-// import RegisterForm from '../atoms/RegisterForm';
+import RegisterForm from '../atoms/RegisterForm';
+// import LoginForm from '../atoms/LoginForm';
 
 const LoginCard = () => {
     return (
@@ -34,8 +34,8 @@ const LoginCard = () => {
             </div>
 
             {/* main login form */}
-            <LoginForm />
-            {/* <RegisterForm /> */}
+            {/* <LoginForm /> */}
+            <RegisterForm />
         </div>
     )
 }
