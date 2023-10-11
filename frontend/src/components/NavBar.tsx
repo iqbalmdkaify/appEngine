@@ -1,4 +1,4 @@
-import { AiOutlineMenu, AiOutlineClose, AiOutlineLoading3Quarters } from 'react-icons/ai';
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { useState } from 'react';
 
 import CustomButton from "../atoms/CustomButton"
