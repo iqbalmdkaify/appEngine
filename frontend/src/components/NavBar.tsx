@@ -1,38 +1,49 @@
-import { AiFillCiCircle, AiOutlineMenu } from 'react-icons/ai';
+import { AiOutlineMenu, AiOutlineClose, AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { useState } from 'react';
+
+import CustomButton from "../atoms/CustomButton"
 
 const NavBar = () => {
     const [visible, setVisible] = useState<boolean>(false);
 
+    const handleNavVisibility = () => {
+        setVisible(!visible);
+    }
+
     return (
-        // main html body has already got 1rem xy padding
-        <nav className='w-full sticky top-0 px-4 flex flex-col justify-between z-10 mb-6 text-[#C70039]'>
-            <div className='border-b-[1px] border-[#C70039] py-4'>
-                {/* Nav wrapper */}
-                <div className='flex justify-between items-center'>
-                    {/* logo container */}
-                    <div className='flex space-x-2 items-center'>
-                        <AiFillCiCircle size={50} /><span className='font-semibold text-4xl'>TECH<span className='text-3xl text-[#141E46]'>NOLOGY</span></span>
-                    </div>
+        <nav className='w-full h-[4rem] text-white bg-black flex justify-between items-center px-6'>
+            <h1 className='font-semibold text-xl md:text-3xl'>TEST APP</h1>
 
-                    {/* Desktop Navigation */}
-                    <div className='hidden sm:flex space-x-10 mr-10 text-[#141E46]'>
-                        <a href='#'>Home</a>
-                        <a href='#'>Interact</a>
-                        <a href='#'>Contact</a>
-                    </div>
-
-                    {/* Hamburger Menu */}
-                    <AiOutlineMenu className='sm:hidden' size={30} onClick={() => setVisible(!visible)} />
-                </div>
-
-                {/* Mobile Navigation */}
-                {visible && <div className='sm:hidden mt-4 flex flex-col gap-2 text-center uppercase font-bold text-lg'>
-                    <a href='#'>Home</a>
-                    <a href='#'>Interact</a>
-                    <a href='#'>Contact</a>
-                </div>}
+            {/* Desktop Navigation */}
+            <div className='hidden md:flex items-center justify-between gap-20'>
+                <ul className='flex space-x-10 items-center'>
+                    <li>Home</li>
+                    <li>Explore</li>
+                    <li>Contact</li>
+                    <CustomButton
+                        text="LOGOUT"
+                        customStyles="hover:outline hover:outline-[1px] hover:outline-[#4e4feb]"
+                    />
+                </ul>
+                <p>Welcome, User</p>
             </div>
+            <div onClick={handleNavVisibility} className='block md:hidden'>
+                {visible ? <AiOutlineClose size={20} color="#4e4feb" /> : <AiOutlineMenu size={20} color="#4e4feb" />}
+            </div>
+
+            {/* Mobile Navigation */}
+            <ul className={visible ? "fixed top-0 left-0 mt-[4rem] text-[#4e4feb] h-[calc(100%-4rem)] flex flex-col bg-[#100F0F] w-full justify-center items-center gap-[4rem] text-xl py-8 ease-in duration-300" : " fixed top-0 left-[-100%] mt-[4rem] h-[calc(100%-4rem)]"}>
+                <li>Home</li>
+                <li>Explore</li>
+                <li>Contact</li>
+                <div className='flex flex-col space-y-4 items-center'>
+                    <CustomButton
+                        text="LOGOUT"
+                        customStyles="hover:outline hover:outline-[1px] hover:outline-[#4e4feb] text-white"
+                    />
+                    <p className='text-white'>Welcome, User</p>
+                </div>
+            </ul>
         </nav>
     )
 }
