@@ -31,7 +31,14 @@ const RegisterForm = () => {
                 <label>Username</label>
                 <input
                     {...register("username", {
-                        required: "Username is mandatory!",
+                        required: {
+                            value: true,
+                            message: "Username is mandatory!"
+                        },
+                        maxLength: {
+                            value: 10,
+                            message: 'Should be 10 characters long!'
+                        }
                     })}
                     type="text"
                     placeholder="Your cool username"
