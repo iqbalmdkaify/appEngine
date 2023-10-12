@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -13,11 +14,11 @@
 }
 
 :root {
-	font-family: Montserrat, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-family: "Cormorant Garamond", system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
 	font-weight: 400;
 
-	background-color: #fff;
+	background-color: #f0ecfc;
 	color: #242424 !important;
 
 	font-synthesis: none;
@@ -27,7 +28,31 @@
 	-webkit-text-size-adjust: 100%;
 }
 
+h1 {
+	font-size: 4.768rem;
+}
+
+h2 {
+	font-size: 3.815rem;
+}
+
+h3 {
+	font-size: 3.052rem;
+}
+
+h4 {
+	font-size: 2.441rem;
+}
+
+h5 {
+	font-size: 1.953rem;
+}
+
+h6 {
+	font-size: 1.563rem;
+}
+/* 
 a:hover {
 	cursor: pointer;
 	color: #4e4feb;
-}
+} */
