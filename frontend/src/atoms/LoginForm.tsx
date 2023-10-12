@@ -1,5 +1,7 @@
 import { useForm } from "react-hook-form";
 import ErrorLine from "./ErrorLine";
+import CustomButton from "./CustomButton";
+// import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 export type LoginFormInputs = {
     email: string;
@@ -29,6 +31,10 @@ const LoginForm = () => {
                 <label>Email</label>
                 <input
                     {...register("email", {
+                        required: {
+                            value: true,
+                            message: "Email is mandatory!"
+                        },
                         pattern: {
                             value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
                             message: "Invalid email!",
@@ -52,7 +58,10 @@ const LoginForm = () => {
                 />
                 {errors.password && <ErrorLine errorMessage={errors.password.message} />}
             </div>
-            <button>LOGIN</button>
+            <CustomButton
+                text="LOGIN"
+                customStyles="outline outline-1 outline-black text-xl hover:bg-black font-bold"
+            />
             <p>Don't have an account? <a className='underline'>Register</a> here</p>
         </form>
     )

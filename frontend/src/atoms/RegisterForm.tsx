@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import ErrorLine from "./ErrorLine";
+import CustomButton from "./CustomButton";
 
 export type RegisterFormInputs = {
     username: string;
@@ -51,6 +52,10 @@ const RegisterForm = () => {
                 <label>Email</label>
                 <input
                     {...register("email", {
+                        required: {
+                            value: true,
+                            message: "Email is mandatory!"
+                        },
                         pattern: {
                             value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
                             message: "Invalid email!",
@@ -87,7 +92,10 @@ const RegisterForm = () => {
                 />
                 {errors.repeatPassword && <ErrorLine errorMessage={errors.repeatPassword.message} />}
             </div>
-            <button>REGISTER</button>
+            <CustomButton
+                text="REGISTER"
+                customStyles="outline outline-1 outline-black text-xl hover:bg-black font-bold"
+            />
             <p>Already have an account? <a className='underline'>SignIn</a> here</p>
         </form>
     )
